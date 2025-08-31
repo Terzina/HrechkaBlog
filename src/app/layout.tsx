@@ -36,9 +36,6 @@ const RootLayout = ({
       >
         <Providers>
           <Header />
-          <div className='flex justify-center w-full'>
-            <p className='font-bold text-accent hover:text-accent/80'>Learn Tailwind</p>
-          </div>
           {children}
         </Providers>
       </body>
