@@ -15,8 +15,8 @@ const NavLink = ({ href, label }: NavLinkProps) => {
     <Link
       href={href}
       className={[
-        'px-2 py-1 font-secondary',
-        active ? 'text-link font-medium' : 'text-text/80 hover:text-link',
+        'px-2 py-1 font-secondary font-medium',
+        active ? 'text-link' : 'text-text/80 hover:text-link',
       ].join(' ')}
       aria-current={active ? 'page' : undefined}
       suppressHydrationWarning
