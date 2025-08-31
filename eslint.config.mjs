@@ -1,25 +1,26 @@
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
 
-import { FlatCompat } from '@eslint/eslintrc';
+import { FlatCompat } from '@eslint/eslintrc'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
-});
+})
 
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript', 'plugin:import/recommended', 'plugin:import/typescript', 'prettier'),
+  ...compat.extends(
+    'next/core-web-vitals',
+    'next/typescript',
+    "plugin:@typescript-eslint/recommended",
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+    'prettier',
+  ),
   {
-    ignores: [
-      'node_modules/**',
-      '.next/**',
-      'out/**',
-      'build/**',
-      'next-env.d.ts',
-    ],
+    ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts'],
   },
   {
     settings: {
@@ -29,6 +30,9 @@ const eslintConfig = [
     },
   },
   {
+    plugins: {
+      prettier: (await import('eslint-plugin-prettier')).default,
+    },
     rules: {
       quotes: ['warn', 'single', { avoidEscape: true }],
       'jsx-quotes': ['warn', 'prefer-single'],
@@ -61,9 +65,24 @@ const eslintConfig = [
       ],
 
       '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports' }],
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
-    },
-  }
-];
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
 
-export default eslintConfig;
+      'prettier/prettier': [
+        'warn',
+        {
+          singleQuote: true,
+          jsxSingleQuote: true,
+          semi: false,
+          trailingComma: 'all',
+          printWidth: 100,
+          bracketSpacing: true,
+        },
+      ],
+    },
+  },
+]
+
+export default eslintConfig
