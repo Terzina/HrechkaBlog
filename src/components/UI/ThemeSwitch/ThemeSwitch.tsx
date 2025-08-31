@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react'
 
-import { Sun, Moon } from 'lucide-react'
+import { Sun, Moon, Loader } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
 export enum ThemeMode {
@@ -22,7 +22,7 @@ const ThemeSwitch = () => {
   }, [])
 
   if (!mount) {
-    return null
+    return <Loader className='h-5 w-5' />
   }
 
   return (
