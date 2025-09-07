@@ -11,6 +11,7 @@ body {
 :root {
   --background: 253 253 253;
   --text: 17 17 17;
+  --surface: 17 17 17;
 
   --color-accent: oklch(0.507 0.092 163.2);
 
@@ -21,6 +22,7 @@ body {
 .dark {
   --background: 46 41 41;
   --text: 245 245 245;
+  --surface: 245 245 245;
 
   --color-accent: oklch(0.776 0.173 70.5);
   --color-link: oklch(0.647 0.171 72.7);
@@ -29,12 +31,14 @@ body {
 @theme {
   --color-background: rgb(var(--background)/<alpha-value>);
   --color-text: rgb(var(--text)/<alpha-value>);
+  --color-surface: rgb(var(--surface));
 
   --color-link: oklch(0.647 0.171 72.7);
   --color-accent: oklch(0.507 0.092 163.2);
 
   --color-green-500: oklch(0.507 0.092 163.2);
   --color-yellow-500: oklch(0.776 0.173 70.5);
+  --color-black: oklch(0.216 0.003 196.929);
 }
 
 .font-secondary {
