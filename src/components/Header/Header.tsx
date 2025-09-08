@@ -1,6 +1,6 @@
 'use client'
 
-import Logo from '@/components/Header/Logo'
+import Logo from '@/components/Header/Logo/Logo'
 import NavLinks from '@/components/Header/NavLinks'
 import BurgerMenu from '@/components/UI/BurgerMenu/BurgerMenu'
 import ThemeSwitch from '@/components/UI/ThemeSwitch'
