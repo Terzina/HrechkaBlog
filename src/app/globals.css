@@ -44,7 +44,7 @@ body {
 
   --color-green-500: oklch(0.507 0.092 163.2);
   --color-yellow-500: oklch(0.776 0.173 70.5);
-  --color-gray-100: var(--color-grey-100);
+  --color-gray-100: var(--color-gray-100);
   --color-black: oklch(0.216 0.003 196.929);
 }
 
