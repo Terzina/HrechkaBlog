@@ -1,42 +1,73 @@
 @import "tailwindcss";
 
+@import "tw-animate-css";
+
 body {
   font-family: var(--font-montserrat), sans-serif;
 
-  background-color: rgb(var(--background));
+  background-color: var(--background);
   color: rgb(var(--text));
   @apply transition-colors duration-300 ease-linear;
 }
 
 :root {
-  --background: 253 253 253;
+  --background: oklch(0.985 0 0);
   --text: 17 17 17;
+  --surface: 17 17 17;
 
+  --color-gray-100: oklch(0.562 0 89.876);
   --color-accent: oklch(0.507 0.092 163.2);
 
   --font-montserrat-alternates: 'Montserrat Alternates', sans-serif;
   --font-montserrat: 'Montserrat', sans-serif;
+  --radius: 0.625rem;
 }
 
 .dark {
-  --background: 46 41 41;
+  --background: oklch(0.298 0.011 26.2);
   --text: 245 245 245;
+  --surface: 245 245 245;
 
+  --color-gray-100: oklch(0.937 0 89.876);
   --color-accent: oklch(0.776 0.173 70.5);
   --color-link: oklch(0.647 0.171 72.7);
 }
 
 @theme {
-  --color-background: rgb(var(--background)/<alpha-value>);
+  --color-background: var(--background);
+
   --color-text: rgb(var(--text)/<alpha-value>);
+  --color-surface: rgb(var(--surface));
 
   --color-link: oklch(0.647 0.171 72.7);
   --color-accent: oklch(0.507 0.092 163.2);
 
   --color-green-500: oklch(0.507 0.092 163.2);
   --color-yellow-500: oklch(0.776 0.173 70.5);
+  --color-gray-100: var(--color-grey-100);
+  --color-black: oklch(0.216 0.003 196.929);
 }
 
 .font-secondary {
   font-family: var(--font-montserrat-alternates), sans-serif;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-grey-100: var(--color-grey-100);
+}
+
+@layer base {
+  button {
+    @apply cursor-pointer;
+  }
+
+  button:disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
 }

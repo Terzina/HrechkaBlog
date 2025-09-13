@@ -15,7 +15,7 @@ const NavLink = ({ href, label }: NavLinkProps) => {
     <Link
       href={href}
       className={[
-        'px-2 py-1 font-secondary font-medium',
+        'font-secondary font-medium text-left text-base',
         active ? 'text-link' : 'text-text/80 hover:text-link',
       ].join(' ')}
       aria-current={active ? 'page' : undefined}

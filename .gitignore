@@ -50,3 +50,6 @@ next-env.d.ts
 *.sln
 *.sw?
 *.idea
+
+*storybook.log
+storybook-static
